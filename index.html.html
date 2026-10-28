@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>22fix | Electrical installation and power repairs in Lagos</title>
+<meta name="description" content="Electrical wiring, inverter and solar installation, generator changeover and fault repair for homes and small businesses on Lagos Mainland. Get a free quote on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1b2d; --ink-2:#1a2b45; --volt:#ffc400; --paper:#f6f7f9; --white:#fff;
+  --slate:#566176; --line:#dde1e8; --ok:#1f8a5b;
+  --head:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:18px/1.6 var(--body);color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+
+/* header */
+header{background:var(--ink);color:var(--white)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+.logo{font:800 26px var(--head);text-decoration:none;letter-spacing:-.5px}
+.logo b{color:var(--volt)}
+nav{display:flex;gap:22px;align-items:center;font-size:16px}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover{opacity:1}
+.btn{display:inline-block;font:600 17px var(--body);padding:13px 22px;border-radius:8px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-volt{background:var(--volt);color:var(--ink)}
+.btn-volt:hover{background:#ffd23f}
+.btn-line{border-color:rgba(255,255,255,.5);color:var(--white)}
+.btn-line:hover{border-color:var(--white)}
+@media(max-width:720px){nav a.hide-sm{display:none}}
+
+/* hero */
+.hero{background:var(--ink);color:var(--white);padding:56px 0 80px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6.2vw,68px);font-weight:800;letter-spacing:-1.5px;color:#5d6b82;transition:color .6s ease,text-shadow .6s ease}
+.hero p.lead{font-size:20px;max-width:34em;margin:20px 0 28px;color:#b8c2d4;transition:color .6s}
+.hero.on h1{color:var(--volt);text-shadow:0 0 38px rgba(255,196,0,.35)}
+.hero.on p.lead{color:#e7ecf4}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* breaker switch */
+.breaker{justify-self:center;text-align:center}
+.plate{width:150px;background:var(--ink-2);border:2px solid #2b3d5c;border-radius:16px;padding:22px 0 18px;box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.sw{width:64px;height:120px;border-radius:12px;background:#0b1424;border:2px solid #34486b;position:relative;margin:0 auto;cursor:pointer;padding:0}
+.sw::after{content:"";position:absolute;left:6px;right:6px;height:50px;border-radius:8px;background:#6b7a93;top:6px;transition:top .35s cubic-bezier(.5,1.6,.5,1),background .35s}
+.hero.on .sw::after{top:58px;background:var(--volt);box-shadow:0 0 22px rgba(255,196,0,.6)}
+.sw-label{font:600 15px var(--body);margin-top:14px;color:#9fb0cc}
+.hero.on .sw-label{color:var(--volt)}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.breaker{order:-1;justify-self:start}.plate{width:120px;padding:14px 0 12px}.sw{height:84px;width:52px}.sw::after{height:34px}.hero.on .sw::after{top:42px}}
+
+/* sections */
+section{padding:72px 0}
+section h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.8px;margin-bottom:12px}
+.sub{color:var(--slate);max-width:36em;margin:0 0 36px}
+
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.svc div{padding:20px 0;border-top:2px solid var(--ink)}
+.svc h3{font-size:22px;margin-bottom:6px}
+.svc p{margin:0;color:var(--slate)}
+@media(max-width:720px){.svc{grid-template-columns:1fr}}
+.areas{margin-top:32px;padding:18px 22px;background:var(--white);border-left:6px solid var(--volt);border-radius:0 8px 8px 0}
+
+/* steps */
+.steps{background:var(--white)}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:16px;border-top:4px solid var(--line)}
+.steps li::before{content:counter(s);display:block;font:800 34px var(--head);color:var(--ok);margin-bottom:4px}
+.steps li b{display:block;font:700 19px var(--head);margin-bottom:4px}
+.steps li span{color:var(--slate);font-size:16px}
+@media(max-width:820px){.steps ol{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps ol{grid-template-columns:1fr}}
+
+/* forms */
+.formbox{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px;max-width:640px}
+label{display:block;font:600 16px var(--body);margin:16px 0 6px}
+input,select,textarea{width:100%;font:17px var(--body);padding:12px 14px;border:2px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink)}
+input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
+textarea{min-height:96px;resize:vertical}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-top:4px}
+.checks label{font-weight:400;margin:0;display:flex;gap:8px;align-items:center}
+.checks input{width:auto}
+.formbox button{margin-top:24px;width:100%}
+.note{font-size:15px;color:var(--slate);margin:12px 0 0}
+
+/* technicians */
+.tech{background:var(--ink);color:var(--white)}
+.tech .sub{color:#b8c2d4}
+.tech .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.tech ul{padding-left:20px;margin:0;color:#e7ecf4}
+.tech li{margin-bottom:10px}
+.tech .formbox{color:var(--ink)}
+@media(max-width:820px){.tech .grid{grid-template-columns:1fr}}
+
+footer{background:#0a1322;color:#9fb0cc;padding:32px 0;font-size:16px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+footer a{color:var(--white)}
+
+.wa-float{position:fixed;right:16px;bottom:16px;background:#25d366;color:#08331c;font:700 16px var(--body);padding:13px 18px;border-radius:999px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:5}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">22<b>fix</b></a>
+    <nav>
+      <a class="hide-sm" href="#services">Services</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#technicians">Join as a technician</a>
+      <a class="btn btn-volt" href="#quote">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero" id="hero">
+    <div class="wrap">
+      <div>
+        <h1>Power problems fixed. Lights back on.</h1>
+        <p class="lead">Electrical installation, inverter and solar setup, and fault repair for homes and small businesses across Lagos Mainland.</p>
+        <div class="cta-row">
+          <a class="btn btn-volt" href="#quote">Get a free quote</a>
+          <a class="btn btn-line" data-wa="Hello 22fix, I need an electrician.">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="breaker">
+        <div class="plate">
+          <button class="sw" id="sw" aria-label="Flip the switch" aria-pressed="false"></button>
+          <div class="sw-label" id="swl">Flip the switch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>What we fix and install</h2>
+      <p class="sub">Tell us what is wrong or what you need. We check first, then send a clear quote before any work starts.</p>
+      <div class="svc">
+        <div><h3>Inverter and solar installation</h3><p>Sizing, supply and installation so your power backup matches how you actually use electricity.</p></div>
+        <div><h3>Wiring and rewiring</h3><p>New buildings, renovations and old wiring that trips, overheats or no longer meets your load.</p></div>
+        <div><h3>Fault finding and repairs</h3><p>Tripping breakers, dead sockets, flickering lights, burning smells and unexplained high bills.</p></div>
+        <div><h3>Generator changeover and servicing</h3><p>Safe changeover switches and routine servicing so your generator is ready when NEPA is not.</p></div>
+        <div><h3>Distribution boards and lighting</h3><p>DB upgrades, proper breakers, and lighting for apartments, shops, salons and offices.</p></div>
+        <div><h3>Maintenance plans</h3><p>Regular checks on your inverter, generator and wiring so small problems are caught early.</p></div>
+      </div>
+      <p class="areas"><b>Where we work:</b> Lagos Mainland, including Yaba, Surulere, Ikeja, Maryland, Gbagada and nearby areas. Not sure if we cover you? Send a message and ask.</p>
+    </div>
+  </section>
+
+  <section class="steps" id="how">
+    <div class="wrap">
+      <h2>How a job works</h2>
+      <p class="sub">The same four steps every time, so you always know what happens next.</p>
+      <ol>
+        <li><b>Send your request</b><span>Use the form below or WhatsApp. Tell us the problem and your area.</span></li>
+        <li><b>We check and quote</b><span>A technician looks at the job and you get a written price before anything starts.</span></li>
+        <li><b>Deposit and work</b><span>You pay a deposit for materials. We do the work and keep you updated.</span></li>
+        <li><b>Test and warranty</b><span>We test everything with you present. The work comes with a written warranty.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap">
+      <h2>Get a free quote</h2>
+      <p class="sub">Fill this in and it opens WhatsApp with your details ready to send. We reply as soon as we can.</p>
+      <form class="formbox" id="clientForm">
+        <label for="c-name">Your name</label>
+        <input id="c-name" name="name" required autocomplete="name">
+        <label for="c-phone">Phone number</label>
+        <input id="c-phone" name="phone" type="tel" required autocomplete="tel">
+        <label for="c-area">Area in Lagos</label>
+        <input id="c-area" name="area" required placeholder="e.g. Yaba, Surulere, Ikeja">
+        <label for="c-service">What do you need?</label>
+        <select id="c-service" name="service" required>
+          <option value="">Choose one</option>
+          <option>Inverter or solar installation</option>
+          <option>Wiring or rewiring</option>
+          <option>Fault finding or repair</option>
+          <option>Generator changeover or servicing</option>
+          <option>Distribution board or lighting</option>
+          <option>Maintenance plan</option>
+          <option>Something else</option>
+        </select>
+        <label for="c-details">Describe the problem or job</label>
+        <textarea id="c-details" name="details" placeholder="Home or shop? Number of rooms? What is happening?"></textarea>
+        <button class="btn btn-volt" type="submit">Send request on WhatsApp</button>
+        <p class="note">Your details go straight to our WhatsApp. We never share them.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="tech" id="technicians">
+    <div class="wrap grid">
+      <div>
+        <h2>Work with 22fix as a technician</h2>
+        <p class="sub">You are good at the work. We bring the clients, handle quotes and chase payments, so you can focus on doing the job well.</p>
+        <ul>
+          <li>Paid per job, with the agreed price shown before you start</li>
+          <li>Jobs in your area, so you spend less time travelling</li>
+          <li>You start with a small paid job so we can both see how we work together</li>
+          <li>Electricians, solar and inverter installers, generator technicians and plumbers welcome</li>
+        </ul>
+      </div>
+      <form class="formbox" id="techForm">
+        <label for="t-name">Full name</label>
+        <input id="t-name" name="name" required autocomplete="name">
+        <label for="t-phone">Phone / WhatsApp number</label>
+        <input id="t-phone" name="phone" type="tel" required autocomplete="tel">
+        <label for="t-area">Area you can work in</label>
+        <input id="t-area" name="area" required placeholder="e.g. Ikeja, Maryland, Gbagada">
+        <label for="t-trade">Main trade</label>
+        <select id="t-trade" name="trade" required>
+          <option value="">Choose one</option>
+          <option>Electrician</option>
+          <option>Solar / inverter installer</option>
+          <option>Generator technician</option>
+          <option>Plumber</option>
+          <option>Other</option>
+        </select>
+        <label for="t-years">Years of experience</label>
+        <input id="t-years" name="years" type="number" min="0" max="50" required>
+        <label>What can you do?</label>
+        <div class="checks">
+          <label><input type="checkbox" name="skills" value="Wiring"> Wiring</label>
+          <label><input type="checkbox" name="skills" value="Inverter installation"> Inverters</label>
+          <label><input type="checkbox" name="skills" value="Solar installation"> Solar</label>
+          <label><input type="checkbox" name="skills" value="Fault finding"> Fault finding</label>
+          <label><input type="checkbox" name="skills" value="Generator changeover"> Generator work</label>
+          <label><input type="checkbox" name="skills" value="DB boards"> DB boards</label>
+        </div>
+        <label for="t-tools">Do you have your own tools?</label>
+        <select id="t-tools" name="tools" required>
+          <option value="">Choose one</option>
+          <option>Yes, full set</option>
+          <option>Some tools</option>
+          <option>No</option>
+        </select>
+        <label for="t-ref">Past job or someone who can vouch for you</label>
+        <textarea id="t-ref" name="ref" placeholder="Name and phone of a past client or employer, or a short description of a job you did"></textarea>
+        <button class="btn btn-volt" type="submit">Send application on WhatsApp</button>
+        <p class="note">We will message you to discuss a first small job.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> 22fix, Lagos, Nigeria</span>
+    <span>WhatsApp: <a href="#" data-wa="Hello 22fix">+234 913 045 5837</a></span>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" data-wa="Hello 22fix, I need an electrician.">WhatsApp us</a>
+
+<script>
+// 1. Replace with your WhatsApp number: country code, no plus sign, no spaces.
+var WA_NUMBER = "2349130455837";
+
+function waLink(text){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text); }
+
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.href = waLink(a.getAttribute("data-wa"));
+  a.target = "_blank"; a.rel = "noopener";
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+// Hero breaker switch: flips on shortly after load, and can be toggled
+var hero = document.getElementById("hero"), sw = document.getElementById("sw"), swl = document.getElementById("swl");
+function setPower(on){
+  hero.classList.toggle("on", on);
+  sw.setAttribute("aria-pressed", on);
+  swl.textContent = on ? "Power on" : "Flip the switch";
+}
+sw.addEventListener("click", function(){ setPower(!hero.classList.contains("on")); });
+setTimeout(function(){ setPower(true); }, 900);
+
+// Forms open WhatsApp with the details filled in
+document.getElementById("clientForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = e.target;
+  var msg = "New job request for 22fix\n" +
+    "Name: " + f.name.value + "\n" +
+    "Phone: " + f.phone.value + "\n" +
+    "Area: " + f.area.value + "\n" +
+    "Service: " + f.service.value + "\n" +
+    "Details: " + (f.details.value || "Not given");
+  window.open(waLink(msg), "_blank");
+});
+
+document.getElementById("techForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = e.target;
+  var skills = Array.prototype.map.call(f.querySelectorAll("input[name=skills]:checked"), function(c){ return c.value; });
+  var msg = "Technician application for 22fix\n" +
+    "Name: " + f.name.value + "\n" +
+    "Phone: " + f.phone.value + "\n" +
+    "Area: " + f.area.value + "\n" +
+    "Trade: " + f.trade.value + "\n" +
+    "Experience: " + f.years.value + " years\n" +
+    "Skills: " + (skills.join(", ") || "Not given") + "\n" +
+    "Own tools: " + f.tools.value + "\n" +
+    "Reference: " + (f.ref.value || "Not given");
+  window.open(waLink(msg), "_blank");
+});
+</script>
+</body>
+</html>
